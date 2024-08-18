@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,24 +14,24 @@ public class Recorder {
 	}
 	
 	public void get(String key) {
-		if (!map.⑥(key)) {
-			⑦ new IllegalArgumentException();
+		if (!map.containsKey(key)) {
+			throw new IllegalArgumentException();
 		}
 	
 		System.out.println(map.get(key));
 	}
 	
 	public void delete(String key) {
-		if (!map.⑥(key)) {
-			⑦ new IllegalArgumentException();
+		if (!map.containsKey(key)) {
+			throw new IllegalArgumentException();
 		}
 
-		map.⑧(key);
+		map.remove(key);
 		System.out.println("deleted: "  + key);
 	}
 	
 	public void delete() {
-		map.⑨();
+		map.clear();
 		System.out.println("deleted all");
 	}
 }
